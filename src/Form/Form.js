@@ -3,6 +3,7 @@ import React, { useState, useContext, useRef } from "react";
 import classes from "./Form.module.css";
 import Card from "../UI/Card/Card";
 import Calculator from "../store/calc-context";
+import Button from "../Results/Button/Button";
 
 const FULL_CHAR_LIST = [
   "0",
@@ -153,12 +154,12 @@ const Form = (props) => {
           />
         </div>
         <div className={classes.actions}>
-          <button type="reset" onClick={resetClickHandler}>
+          <Button type="reset" onClick={resetClickHandler}>
             Reset
-          </button>
-          <button type="submit" disabled={!formIsComplete}>
+          </Button>
+          <Button type="submit" disabled={!formIsComplete}>
             Convert
-          </button>
+          </Button>
         </div>
       </form>
     </Card>
