@@ -1,0 +1,19 @@
+.results-table {
+    width: 80%;
+    margin: auto;
+}
+
+.results-table td,
+.results-table th {
+    text-align: left;
+}
+
+.results-table thead {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.results-table tbody {
+    font-size: 14px;
+}
+

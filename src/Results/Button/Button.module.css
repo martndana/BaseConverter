@@ -1,0 +1,20 @@
+button {
+    margin-top: 30px; 
+    padding: 13px 21px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #7b92e3;
+    border: 0;
+}
+
+button:hover,
+button:focus {
+    cursor: pointer;
+    background-color: #6d87e4;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor:not-allowed;
+}
