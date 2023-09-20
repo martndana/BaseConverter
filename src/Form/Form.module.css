@@ -4,9 +4,9 @@
     justify-content: space-around;
 }
 
-.controls label,
 .controls label {
     width: 200px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -14,6 +14,7 @@
 .controls input {
     width: 300px;
     padding: 5px;
+    font-size: 14px;
     border-radius: 3px;
 }
 
@@ -27,23 +28,17 @@
     justify-content: space-evenly;
 }
 
-.actions button {
-    margin-top: 30px; 
-    padding: 13px 21px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 700;
-    background-color: #7b92e3;
-    border: 0;
-}
+@media only screen and (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+    }
 
-.actions button:hover,
-.actions button:focus {
-    cursor: pointer;
-    background-color: #6d87e4;
-}
+    .controls label {
+        font-size: 14px;
+    }
 
-.actions button:disabled {
-    background-color: #aaa;
-    cursor:not-allowed;
+    .controls input,
+    .controls select {
+        font-size: 12px;
+    }
 }

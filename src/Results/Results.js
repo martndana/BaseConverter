@@ -1,62 +1,37 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 
-import classes from './Results.module.css';
+import classes from "./Results.module.css";
 
 import Card from "../UI/Card/Card";
 import Calculator from "../store/calc-context";
+import ResultsTable from "./ResultsTable";
+import Button from "../UI/Button/Button";
 
-const STRING_ARRAY = [
-    'Binary (2)',
-    'Ternary (3)',
-    'Quarternary (4)',
-    'Quinary (5)',
-    'Senary (6)',
-    'Septimal (7)',
-    'Octal (8)',
-    'Nonal (9)',
-    'Decimal (10)',
-    'Undecimal (11)',
-    'Duodecimal (12)',
-    'Tredecimal (13)',
-    'Quadrodecimal (14)',
-    'Quindecimal (15)',
-    'Hexadecimal (16)',
-]
+const Results = () => {
+  const [tableIsShown, setTableIsShown] = useState(false);
+  const ctx = useContext(Calculator);
 
-const Results = (props) => {
-    const ctx = useContext(Calculator);
+  let decimal = parseInt(ctx.number, ctx.fromBase);
 
-    let numbersArray = [];
+  let resultNumber = decimal.toString(ctx.toBase).toUpperCase();
 
-    for (let i = 2; i < 17; i++) {
-        numbersArray.push({
-            base: STRING_ARRAY[i-2],
-            value: ctx.decimalNumber.toString(i)
-        });
-    }
+  const toggleTableHandler = (event) => {
+    setTableIsShown((prevState) => !prevState);
+  };
 
-    return (
-        <Card className={classes.results}>
-            <h2>Results</h2>
-            <p className={classes.summary}>{ctx.convertedNumber}</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Base</th>
-                        <th>Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {numbersArray.map((number) => (
-                    <tr key={Math.random()}>
-                        <td>{number.base}</td>
-                        <td>{number.value}</td>
-                    </tr>
-                    ))}
-                </tbody>
-            </table>
-        </Card>
-    )
-}
+  return (
+    <Card className={classes.results}>
+      <h2>Results (<i className={classes.subheading}>Base {ctx.toBase}</i>)</h2>
+      <p className={classes.summary}>{resultNumber}</p>
+      {!tableIsShown && (<Button type="button" onClick={toggleTableHandler}>
+        Show Full Table
+      </Button>)}
+      {tableIsShown && (<Button type="button" onClick={toggleTableHandler}>
+        Hide Table
+      </Button>)}
+      {tableIsShown && <ResultsTable />}
+    </Card>
+  );
+};
 
 export default Results;
