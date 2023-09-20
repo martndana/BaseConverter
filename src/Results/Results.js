@@ -24,7 +24,7 @@ const Results = () => {
       <h2>Results</h2>
       <p className={classes.summary}>{resultNumber}</p>
       {!tableIsShown && (<Button type="button" onClick={toggleTableHandler}>
-        Show Table
+        Show Full Table
       </Button>)}
       {tableIsShown && (<Button type="button" onClick={toggleTableHandler}>
         Hide Table
