@@ -1,0 +1,29 @@
+.results {
+    text-align: center;
+}
+
+.summary {
+    font-size: 40px;
+    font-weight: 700;
+    color: #561958;
+    margin: 0 0 20px;
+}
+
+.results table {
+    width: 80%;
+    margin: auto;
+}
+
+.results table td,
+.results table th {
+    text-align: left;
+}
+
+.results table thead {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.results table tbody {
+    font-size: 14px;
+}
