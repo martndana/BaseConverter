@@ -4,9 +4,9 @@
     justify-content: space-around;
 }
 
-.controls label,
 .controls label {
     width: 200px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -14,6 +14,7 @@
 .controls input {
     width: 300px;
     padding: 5px;
+    font-size: 14px;
     border-radius: 3px;
 }
 
@@ -25,4 +26,19 @@
 .actions {
     display: flex;
     justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls label {
+        font-size: 14px;
+    }
+
+    .controls input,
+    .controls select {
+        font-size: 12px;
+    }
 }

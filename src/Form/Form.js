@@ -91,7 +91,6 @@ const Form = (props) => {
   };
 
   const keyPressHandler = (event) => {
-    console.log(event);
     if (charList.includes(event.key) || event.key === "Backspace") {
         return event.key;
     } else {

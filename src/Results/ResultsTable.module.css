@@ -1,6 +1,6 @@
 .results-table {
     width: 80%;
-    margin: auto;
+    margin: 20px auto;
 }
 
 .results-table td,
@@ -14,6 +14,15 @@
 }
 
 .results-table tbody {
-    font-size: 14px;
+    font-size: 16px;
 }
 
+@media only screen and (max-width: 768px) {
+    .results-table thead{
+        font-size: 16px;
+    }
+
+    .results-table tbody {
+        font-size: 14px;
+    }
+}
