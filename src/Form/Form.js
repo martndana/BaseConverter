@@ -51,6 +51,9 @@ const Form = (props) => {
   };
 
   const changeBaseHandler = (event) => {
+    inputRef.current.value = "";
+    ctx.onReset();
+
     if (event.target.id === "fromBase") {
       const base = +event.target.value;
 
@@ -66,6 +69,7 @@ const Form = (props) => {
         toBase: event.target.value,
       }));
     }
+    
     return;
   };
 
