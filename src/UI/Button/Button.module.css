@@ -4,14 +4,15 @@ button {
     border-radius: 6px;
     font-size: 16px;
     font-weight: 700;
-    background-color: #7b92e3;
+    background-color: #273568;
+    color: #fff;
     border: 0;
 }
 
 button:hover,
 button:focus {
     cursor: pointer;
-    background-color: #6d87e4;
+    background-color: #3d4666
 }
 
 button:disabled {

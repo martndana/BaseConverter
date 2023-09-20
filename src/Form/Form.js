@@ -3,7 +3,7 @@ import React, { useState, useContext, useRef } from "react";
 import classes from "./Form.module.css";
 import Card from "../UI/Card/Card";
 import Calculator from "../store/calc-context";
-import Button from "../Results/Button/Button";
+import Button from "../UI/Button/Button";
 
 const FULL_CHAR_LIST = [
   "0",
